@@ -89,6 +89,35 @@ a {
   align-items: center;
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-blue);
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-dropdown {
+  display: none;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav-links a {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
 .nav-brand {
   display: flex;
   flex-direction: column;
@@ -584,6 +613,31 @@ a {
 
   .nav-links, .contact-pill {
     display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 25px 20px;
+    z-index: 999;
+    animation: slideDown 0.3s ease forwards;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   .nav-actions {
